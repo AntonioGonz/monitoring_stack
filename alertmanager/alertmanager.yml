@@ -18,6 +18,7 @@ receivers:
     email_configs:
       - smarthost: 'smtp.mail.yahoo.com:587'
         auth_username: 'dummy.sec@yahoo.com'
+        auth_identity: 'dummy.sec@yahoo.com'
         auth_password: "lqkeuhxqoyefbwlc"
         from: 'dummy.sec@yahoo.com'
         to: 'dummy.sec@yahoo.com'
