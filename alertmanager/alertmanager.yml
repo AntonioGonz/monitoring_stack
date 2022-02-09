@@ -17,11 +17,11 @@ route:
 receivers:
   - name: 'mail'
     email_configs:
-      - smarthost: 'yourmailhost.com:465'
-        auth_username: 'yourmail@yourmailhost.com'
-        auth_password: "your mail password"
-        from: 'yourmail@yourmailhost.com'
-        to: 'someonesmail@yourmailhost.com'
+      - smarthost: 'smtp.mail.yahoo.com:465'
+        auth_username: 'dummy.sec@yahoo.com'
+        auth_password: "Securitec1."
+        from: 'dummy.sec@yahoo.com'
+        to: 'antoniogonzalez.sc.e@outlook.com'
         require_tls: false
 
   - name: 'teams'
