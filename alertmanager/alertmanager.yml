@@ -13,15 +13,14 @@ route:
       matchers:
         - severity="high"
 
-
 receivers:
   - name: 'mail'
     email_configs:
-      - smarthost: 'smtp.mail.yahoo.com:465'
+      - smarthost: 'smtp.mail.yahoo.com:587'
         auth_username: 'dummy.sec@yahoo.com'
-        auth_password: "Securitec1."
+        auth_password: "lqkeuhxqoyefbwlc"
         from: 'dummy.sec@yahoo.com'
-        to: 'antoniogonzalez.sc.e@outlook.com'
+        to: 'dummy.sec@yahoo.com'
         require_tls: false
 
   - name: 'teams'
