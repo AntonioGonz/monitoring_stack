@@ -1,8 +1,5 @@
 version: '3'
 
-networks:
-  monitoring:
-    driver: bridge
 services:
   prometheus:
     image: prom/prometheus:v2.30.3
@@ -12,8 +9,7 @@ services:
       - ./prometheus:/etc/prometheus
       - prometheus-data:/prometheus
     command: --web.enable-lifecycle  --config.file=/etc/prometheus/prometheus.yml
-    networks:
-      - monitoring
+
   node-exporter:
     image: prom/node-exporter:latest
     container_name: node-exporter
@@ -29,8 +25,7 @@ services:
       - '--path.rootfs=/rootfs'
       - '--path.sysfs=/host/sys'
       - '--collector.filesystem.mount-points-exclude=^/(sys|proc|dev|host|etc)($$|/)'
-    networks:
-      - monitoring
+
   grafana:
     image: grafana/grafana:8.2.2
     depends_on:
@@ -41,8 +36,7 @@ services:
     volumes:
       - ./grafana/provisioning/datasources:/etc/grafana/provisioning/datasources
       - grafana-data:/var/lib/grafana
-    networks:
-      - monitoring
+
   alertmanager:
     image: prom/alertmanager:v0.23.0
     restart: unless-stopped
@@ -54,8 +48,7 @@ services:
       - "./alertmanager:/config"
       - alertmanager-data:/data
     command: --config.file=/config/alertmanager.yml --log.level=debug 
-    networks:
-      - monitoring
+
   prom2teams:
     image: idealista/prom2teams:3.2.3
     restart: unless-stopped
@@ -63,8 +56,7 @@ services:
       PROM2TEAMS_CONNECTOR: "https://og2gether.webhook.office.com/webhookb2/b5370781-89c2-45ba-be14-453e29dfb0a9@8794e153-c3bd-4479-8bea-61aeaf167d5a/IncomingWebhook/57e69e8f10dd49ce8dae3b816159e228/4eb361c9-e566-4b66-ab30-bed630f495a5"
     ports:
       - 8089:8089
-    networks:
-      - monitoring
+
 volumes:
   prometheus-data:
   grafana-data:
