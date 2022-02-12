@@ -22,7 +22,7 @@ receivers:
         auth_password: "CWCCn6LgeMjv"
         from: 'alerts@securitec.pe'
         to: 'antonio.gonzales@securitec.pe'
-        require_tls: false
+        require_tls: true
 
 # receivers:
 #   - name: 'mail'
