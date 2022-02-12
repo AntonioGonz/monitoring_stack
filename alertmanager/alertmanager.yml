@@ -16,13 +16,24 @@ route:
 receivers:
   - name: 'mail'
     email_configs:
-      - smarthost: 'smtp.mail.yahoo.com:587'
-        auth_username: 'dummy.sec@yahoo.com'
-        auth_identity: 'dummy.sec@yahoo.com'
-        auth_password: "lqkeuhxqoyefbwlc"
-        from: 'dummy.sec@yahoo.com'
-        to: 'dummy.sec@yahoo.com'
+      - smarthost: 'securitec-pe.mail.protection.outlook.com:587'
+        auth_username: 'alerts@securitec.pe'
+        auth_identity: 'alerts@securitec.pe'
+        auth_password: "CWCCn6LgeMjv"
+        from: 'alerts@securitec.pe'
+        to: 'antonio.gonzales@securitec.pe'
         require_tls: false
+
+# receivers:
+#   - name: 'mail'
+#     email_configs:
+#       - smarthost: 'smtp.mail.yahoo.com:587'
+#         auth_username: 'dummy.sec@yahoo.com'
+#         auth_identity: 'dummy.sec@yahoo.com'
+#         auth_password: "lqkeuhxqoyefbwlc"
+#         from: 'dummy.sec@yahoo.com'
+#         to: 'dummy.sec@yahoo.com'
+#         require_tls: false
 
   - name: 'teams'
     webhook_configs:
