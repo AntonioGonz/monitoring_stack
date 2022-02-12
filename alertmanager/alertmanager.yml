@@ -33,7 +33,7 @@ receivers:
   - name: 'slack'
     slack_configs: 
       - channel: "#monitoring"
-        api_url: https://hooks.slack.com/services/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
+        api_url: https://hooks.slack.com/services/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
         text: "Overview: {{  .CommonAnnotations.overview }}"
 
   - name: 'mail'
